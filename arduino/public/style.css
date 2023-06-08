@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+
+*{
+  font-family: "Quicksand";
+  color: whitesmoke;
+  text-align: center;
+  
+}
+/*@media (min-width: 1024px) {
+.progress-circle {
+    display: block;
+    margin-top: 5rem;
+    margin-left: 3rem;
+
+  }
+  
+  .progress-circle-background {
+    fill: #f1f1f1;
+  }
+  
+  .progress-circle-progress {
+    fill: #4caf50;
+    stroke: #316032;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 0.3s ease;
+  }
+  
+  .progress-text {
+    font-size: 24px;
+    fill: #000;
+  }
+body{
+    background-image: url('slike/back.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+}
+.btn1{
+  border-radius: 18px;
+  width: 100px;
+  margin-top: 2rem;
+  background-color: #4caf50;
+  color: #f1f1f1;
+}
+.btn {
+    height: 80px;
+    width: 80px;
+    border: 1px white;
+    color: white;
+    background-color: rgba(10, 126, 162, 0.762);
+    text-align: center;
+    border-top-left-radius: 90px;
+    border-bottom-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+    box-shadow: 1px 2px 1px darkblue;
+    font-size:smaller ;
+    margin-top: 3rem;
+
+}
+
+
+.stats{
+    display: flex;
+    margin-top: 7rem;
+    margin-left: 10%;
+}
+
+.card1{
+    text-align: center;
+   position: relative;
+   width: 350px;
+   height: 450px;
+   padding: 30px;
+   background-color: rgba(0, 0, 0, 0.523);
+   border-radius: 10px;
+margin-right: 6rem;
+   box-shadow: 0 20px 30px rgba(29, 122, 35, 0.1)
+}
+.card2{
+    text-align: center;
+    position: relative;
+    width: 350px;
+    height:450px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.523);
+    border-radius: 10px;
+    box-shadow: 0 20px 30px rgba(29, 122, 35, 0.1)
+ }
+}
+*/
+
+
+
+
+
+  h1{
+    font-size: 50px; 
+  }
+  h2{
+    font-size: 40px;
+  }
+  p{
+    font-size: 30px;
+  }
+  .progress-circle {
+    display: block;
+    margin-top: 14rem;
+    margin-left:20%;
+  }
+  
+  .progress-circle-background {
+    fill: #f1f1f1;
+  }
+  
+  .progress-circle-progress {
+    fill: #4caf50;
+    stroke: #316032;
+    stroke-width: 15;
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 0.3s ease;
+  }
+  
+  .progress-text {
+    font-size: 60px;
+    font-weight: bold;
+  }
+body{
+background-image: url('slike/backM.jpg');
+font-size: 18px; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+margin-bottom: 15rem;
+}
+
+.stats{
+
+    display:grid;
+   justify-content:center;
+   align-items: center;
+}
+
+.card1{
+  margin-top: 6rem;
+  text-align: center;
+   position:relative;
+   width: 700px;
+   height: 900px;
+   padding: 30px;
+   margin-bottom:2rem;
+   background-color: rgba(0, 0, 0, 0.581);
+   border-radius: 10px;
+   box-shadow: 0 20px 30px rgba(29, 122, 35, 0.1)
+}
+
+.card2{
+    text-align: center;
+    position: relative;
+    width: 700px;
+    height: 600px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.581);
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    box-shadow: 0 20px 30px rgba(29, 122, 35, 0.1)
+ }
+  
+  
+  
+  

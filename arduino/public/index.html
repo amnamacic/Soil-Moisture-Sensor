@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<html lang="en"></html>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="app.js"></script>
+
+
+<head>
+    <title>Soil Moisture Sensor</title>
+       <script type="module">
+        // Import the functions you need from the SDKs you need
+  
+        var firebaseConfig = {
+          apiKey: "AIzaSyCDF379WGtauZqSck2o4O8qoHTdQGUNo4A",
+          authDomain: "arduino-222cd.firebaseapp.com",
+          databaseURL: "https://arduino-222cd-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "arduino-222cd",
+          storageBucket: "arduino-222cd.appspot.com",
+          messagingSenderId: "890114807694",
+          appId: "1:890114807694:web:cdb7b815245fecb9e976df",
+          measurementId: "G-LVYXQY5928"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        
+        var vlagaZemlje=document.getElementById('vlagaInput');
+        var btn = document.getElementById('btn');
+        var vlaznost= firebase.database().ref().child('PWS/Vlaga');
+        var relej = firebase.database().ref().child('PWS/relej');
+        var signal = firebase.database().ref().child('PWS/signal');
+    
+        vlaznost.on('value', (podatak) =>{
+        var vrijednost=podatak.val();
+        var temp=document.getElementById('klasa');
+
+        function setProgressValue(value) {
+  const progressCircle = document.querySelector('.progress-circle-progress');
+  const progressText = document.querySelector('.progress-text');
+  const circumference = 2 * Math.PI * 180;
+  const offset = circumference - (value / 100) * circumference;
+
+  progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+  progressCircle.style.strokeDashoffset = offset;
+  progressText.textContent = `${value}%`;
+}
+
+setProgressValue(vrijednost);
+
+    if(vrijednost<10){
+            vlaznostZemlje.innerHTML="SUHO";
+            prijedlog.innerHTML="Vlaga tla je izuzetno niska. Zalijevanje biljke je neophodno.";
+    }
+    else if(vrijednost <85 && vrijednost >10){
+        vlaznostZemlje.innerHTML="OPTIMALNO";
+        prijedlog.innerHTML="Vlaga tla je optimalna. Nastavite da pratite nivoe vlage i prilagodite zalivanje po potrebi.";
+    }
+    else{
+        vlaznostZemlje.innerHTML="MOKRO";
+        prijedlog.innerHTML="Vlaga tla je izuzetno visoka. Izbjegavajte prekomjerno zalijevanje.";
+    }
+});   
+          
+</script>
+</head>
+
+
+<body>
+   <br>
+
+    <div class="stats">
+        <div class="row">
+            <div class="card1" id="klasa">
+                <br>
+                <h1>Vlažnost tla %</h1>
+                <svg class="progress-circle" width="400" height="400">
+                    <circle class="progress-circle-background" cx="200" cy="200" r="180"></circle>
+                    <circle class="progress-circle-progress" cx="200" cy="200" r="180"></circle>
+                    <text class="progress-text" x="50%" y="50%" dy="0.35em" text-anchor="middle">vrijednost</text>
+                  </svg>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="card2" id="klasa">
+                <br>
+                <h1>Vlažnost tla</h1>
+                <br>
+                <br>
+                <h2 id="vlaznostZemlje" style="color: #4caf50; font-weight: bold; font-size: 60px;" ></h2>
+                <br>
+                <br>
+                <br>
+                <p id="prijedlog">Prijedlog:</p>
+
+            </div>
+        </div>
+
+    </div>
+    <h2 style="margin-top:8rem;">Soil Moisture Sensor</h2>
+</body>
+</html>
